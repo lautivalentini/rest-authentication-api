@@ -1,10 +1,14 @@
 const express = require('express')
+const cors = require('cors')
 
 class Server {
 
   constructor() {
     this.app = express()
     this.port = process.env.PORT
+
+    //CORS
+    this.app.use(cors())
 
     // Middlewares
     this.middlewares()
