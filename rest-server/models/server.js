@@ -6,6 +6,7 @@ class Server {
   constructor() {
     this.app = express()
     this.port = process.env.PORT
+    this.usersPath = '/api/user'
 
     //CORS
     this.app.use(cors())
@@ -23,9 +24,7 @@ class Server {
   }
 
   routes() {
-    this.app.get('/', (req, res) => {
-      res.send('Hello')
-    })
+    this.app.use(this.usersPath, require('../routes/user'))
   }
 
   listen() {
