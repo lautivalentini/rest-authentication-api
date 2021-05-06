@@ -8,9 +8,6 @@ class Server {
     this.port = process.env.PORT
     this.usersPath = '/api/user'
 
-    //CORS
-    this.app.use(cors())
-
     // Middlewares
     this.middlewares()
 
@@ -19,6 +16,12 @@ class Server {
   }
 
   middlewares() {
+    //CORS
+    this.app.use(cors())
+
+    // body parser
+    this.app.use(express.json())
+
     // Public directory
     this.app.use(express.static('public'))
   }
