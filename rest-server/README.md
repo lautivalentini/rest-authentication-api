@@ -3,7 +3,7 @@
 Rest server using Node.js with Express.js and connection to MongoDB database
 
 * Rest server (get, post, put and delete)
-* Validation with [xpress-validator](https://express-validator.github.io/docs/)
+* Validation with [express-validator](https://express-validator.github.io/docs/)
 * Encrypt password with [bcrypt.js](https://www.npmjs.com/package/bcryptjs)
 
 ## ¿Cómo correr el proyecto?
