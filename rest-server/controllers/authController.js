@@ -26,7 +26,7 @@ const loginController = async (req = request, res = response) => {
 
     const token = await generateJWT(user.id)
 
-    res.json({msg: 'USER LOGGED', token})
+    res.json({msg: 'USER LOGGED', user, token})
 
   } catch(error) {
     res.status(500).json({msg: 'Ocurred an error'})
