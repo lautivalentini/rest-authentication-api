@@ -3,7 +3,8 @@ const { request, response } = require("express");
 const { Category } = require('../models')
 
 const addCategory = async (req = request, res = response) => {
-  const name = req.body.name.toUpperCase()
+  try {
+    const name = req.body.name.toUpperCase()
 
   const categoryDb = await Category.findOne({ name })
 
@@ -16,10 +17,13 @@ const addCategory = async (req = request, res = response) => {
     user: req.user._id
   }
 
-    const category = await new Category( data );
+    const category = new Category(data);
     await category.save();
 
-    res.status(201).json(category)
+    res.status(201).json({msg: 'ADD CATEGORY', category})
+  } catch (err) {
+    console.log(err)
+  }
 }
 
 module.exports = {

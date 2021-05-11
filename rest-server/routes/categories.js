@@ -1,5 +1,6 @@
 const { Router } = require('express')
 const { check } = require('express-validator');
+
 const { addCategory } = require('../controllers/categoriesController');
 
 const { validateJWT, validateFields } = require('../middlewares')
