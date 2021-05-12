@@ -25,10 +25,8 @@ router.get('/:id', [
 
 router.post('/', [ 
   validateJWT,
-  //check('id', 'Invalid Id').isMongoId(),
   check('name', 'The name is required').not().isEmpty(),
   check('category', 'Invalid id for category').not().isEmpty(),
-  // check('id').custom( existingCategory ),
   validateFields
 ], addProduct )
 
