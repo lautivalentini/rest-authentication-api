@@ -1,6 +1,6 @@
-## Rest Server
+## Rest and Authentication API
 
-Rest server using Node.js with Express.js and connection to MongoDB database
+Using Node.js with Express.js and connection to MongoDB database
 
 * Rest server (get, post, put and delete)
 * Validation with [express-validator](https://express-validator.github.io/docs/)
